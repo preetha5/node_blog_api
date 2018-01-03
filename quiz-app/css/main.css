@@ -1,0 +1,74 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	margin:0,padding:0;
+}
+header h1, .questionBox h2{
+	text-align: center;
+	padding: 20px 10px;
+}
+main{
+	max-width: 960px;
+	margin: 0 auto;
+	border: solid 1px ;
+	padding: 20px 10px;
+}
+
+.tracking, .questionBox, .optionsForm, .final{
+	display: none;
+}
+
+.quizHome{
+	text-align: center;
+}
+.tracking{
+	position: relative;
+	margin-bottom: 2em;
+}
+
+.trackingCard{
+	display: inline-block;
+	border: solid 1px;
+	width: 20%;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.scoreCard{
+	position: absolute;
+	right: 0;
+	top:0;
+}
+
+.questionBox{
+	width: 80%;
+    margin: 0 10%;
+}
+
+.quizHome, .optionsForm, .final{
+	width: 60%;
+    margin: 2em 20%;
+	text-align: center;
+}
+
+.optionsForm .option{
+	display: block;
+	margin: 1em 0;
+	width: 100%;
+	height: 30px;
+	text-align: left;
+	padding-left: 1em;
+	position: relative;
+}
+
+.answer{
+	position: absolute;
+	right: 20px;
+	font-weight: bold;
+}
+
+.final, .quizHome{
+	border: solid 1px;
+	padding: 20px;
+}
