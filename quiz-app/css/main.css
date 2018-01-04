@@ -72,3 +72,22 @@ main{
 	border: solid 1px;
 	padding: 20px;
 }
+
+/* Styles to show correct/incorrect feedback */
+.highlight{
+	border: solid 2px black;
+}
+.confirm{
+	position: absolute;
+	right: 10px;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.confirm.right{
+	color: green;
+}
+
+.confirm.wrong{
+	color: red;
+}
