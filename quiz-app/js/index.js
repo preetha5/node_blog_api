@@ -3,31 +3,87 @@ const STORE =
 		{
 			question: "Which movie is this quote from : 'You can\'t handle the truth' ?",
 		 	options: ["A few Good Men", "Rules of Engagement", "The Departed", "Top Gun"],
-		 	answer:"A few Good Men",
+		 	answer: "A few Good Men",
 		},
 		{
-			question: "Which movie is this quote from : 'Keep you friends close, but enemies closer.' ?",
+			question: 'Which movie is this quote from : "Keep you friends close, but enemies closer." ?',
 		 	options: ["The Godfather 1", "The Godfather 2", "The Godfather 3", "GoodFellas"],
-		 	answer:"The Godfather 2",
+		 	answer: "The Godfather 2",
+		},
+		{
+			question: 'Which movie is this quote from : "Here\'s Johnny." ?',
+		 	options: ["The Terminator", "Ghost Rider", "The Shining", "The Treasure Island"],
+		 	answer: "The Shining",
+		},
+		{
+			question: 'Which movie is this quote from : "Hasta la vista, baby." ?',
+		 	options: ["Terminator", "Terminator 2 : Judgement Day", "Terminator 3: Rise of the Machines", "Total Recall"],
+		 	answer: "Terminator 2 : Judgement Day",
+		},
+		{
+			question: '"My Precious" - Who says this in the movie "Lord of the Rings" ?',
+		 	options: ["Frodo Baggins", "Gimli", "Gollum", "Bilbo Baggins"],
+		 	answer: "Gollum",
+		},
+		{
+			question: 'Which movie is this quote from :"Open the pod bay doors, please HAL"?',
+		 	options: ["2001 - Space Odyssey", "Gravity", "Planet of the Apes", "Apollo 18"],
+		 	answer: "2001 - Space Odyssey",
+		},
+		{
+			question: 'Which of the Star Wars character is famous for this quote :"Do or Do not. There is no try."?',
+		 	options: ["Hans Solo", "Luke Skywalker", "Obi-Wan Kenobi", "Yoda"],
+		 	answer: "Yoda",
+		},
+		{
+			question: 'Which character from Harry Potter series says :"Of course its happening in your head Harry, but \
+			 why on earth should that mean it is not real"?',
+		 	options: ["Lord Voldemort", "Hermione Granger", "Albus Dumbledore", "Ron Weasley"],
+		 	answer: "Albus Dumbledore",
+		},
+		{
+			question: 'Which movie is this quote from :"Frankly, my dear, I don\'t give a damn."?',
+		 	options: ["Gone with the wind", "Doctor Zhivago", "The Titanic", "Ben-Hur"],
+		 	answer: "Gone with the wind",
+		},
+		{
+			question: 'Which movie is this quote from :"A census taker once tried to test me. I ate his liver with \
+			some fava beans and a nice chianti."?',
+		 	options: ["Red Dragon", "Psycho", "Zodiac", "Silence of the lambs"],
+		 	answer: "Silence of the lambs",
 		},
 	]
 
-let currentScore =0, currentQuestion = 0;
+// Initialize the question and score counters
+let currentScore = 0, currentQuestion = 0;
 
 //Reset the score card and question card
+//Hide the final score page
 //Go back to first question page
 function restartQuiz(){
 	console.log('restarting quiz ...');
+	$('.final').on('click', '.replay', (e) => {
+  		e.stopPropagation();
+		console.log("restarting game..");
+	   currentScore = 0, currentQuestion = 0;
+	   $('.final').css("display", "none");
+	   startQuiz(e);
+	})
 }
 
 //Show the final score and option to replay the game
 function showFinalScore(){
   console.log("showing final score..");
+  $('main section').css("display", "none");
+  let scoreString = `${currentScore}/${currentQuestion}`;
+  $('.final .score').text(scoreString);
+  $('.final').css("display", "block");
   restartQuiz();
 }
 
 
 //Show the right and wrong answers
+//disable choices after user has clicked once
 //Enable Next question
 function showFeedback(correctAnswer){
 	let rightString = "<span class='confirm right'>Correct</span>";
@@ -54,7 +110,7 @@ function showFeedback(correctAnswer){
 //update score accordingly
 function checkAnswer(selectedAnswer, correctAnswer){
 	
-	console.log(selectedAnswer.text());
+	//console.log(selectedAnswer.text());
 	
 	selectedAnswer.addClass('highlight');
 	//Update Score
@@ -62,17 +118,9 @@ function checkAnswer(selectedAnswer, correctAnswer){
 		currentScore++;
 	}
 
-	
-	// let rightOption =  $('.option[name=correctAnswer]');
-	// let wrongOptions =  $('.option').not(rightOption);
-	
-	// $('.option[name="Top Gun"]').css("color","pink");
-	//$(rightOption).append(rightString);
-	//$(wrongOptions).append(wrongString);
 	updateScoreCard(currentScore, currentQuestion+1);
-
 	showFeedback(correctAnswer);
-	//disable choices after user has clicked once
+	
 }
 
 //handle the answer submission event
@@ -85,8 +133,6 @@ function handleButtonClick(){
   	let selectedAnswer = $(e.currentTarget);
   	let correctAnswer = STORE[currentQuestion].answer;
   	checkAnswer(selectedAnswer, correctAnswer);
-
-  	wrongOptions = $('.option')
   });
 }
 
@@ -117,7 +163,6 @@ function updateOptions(STORE, currentQuestion){
 	list.forEach(item=>{
 		 options += `<button type="button" class="option">${item}</button>`;
 	});
-	console.log(options);
 	const optionsList = `<form action="#" method="post" >
 							${options}
 							<button type='submit' disabled class="btnNext">Next</button>
@@ -129,12 +174,11 @@ function updateOptions(STORE, currentQuestion){
 //while beginning the quiz it will be the first question
 // and the corresponding 4 answer options
 function renderQuizPage(){
-	console.log("quiz page rendered..");
 	updateQuestionBox(STORE, currentQuestion);
 	updateOptions(STORE, currentQuestion);
 	updateQuestionCard(currentQuestion);
 	updateScoreCard(currentScore, currentQuestion);
-	handleButtonClick();
+	//handleButtonClick();
 	//handleNextButtonClick();
 	//for each object in STORE
 	//Show the question
@@ -146,28 +190,35 @@ function renderQuizPage(){
 //handle the next button clicks
 function handleNextButtonClick(){
 	$('.optionsForm').on('click', '.btnNext', (e)=>{
-		alert('next cli8cked');
 		e.preventDefault();
 		currentQuestion++;
-		console.log(`question number ${currentQuestion}`);
-		renderQuizPage();
+		//After final question show the score page
+		console.log("lebtght of store is " +STORE.length);
+		console.log("current question is " + currentQuestion);
+		if(currentQuestion >= STORE.length){
+			showFinalScore();
+		} else{
+			console.log(`question number ${currentQuestion+1}`);
+			renderQuizPage();
+		}
+		
 	});
 }
 
 //handle the start button click feature
-function startQuiz(){
-  console.log("quiz starting....");
-  $('.quizHome form').submit((e)=>{
+function startQuiz(e){
+  	console.log("quiz starting....");
   	e.preventDefault();
   	$('main section').css("display", "none");
   	$('.tracking, .questionBox, .optionsForm').css("display", "block");
-  });
-  renderQuizPage();
+	  renderQuizPage();
+	  
 }
 
+//This function runs the very first time on clicking Start Quiz button
 function quizApp(){
-	startQuiz();
-	//handleButtonClick();
+	$('.quizHome form').submit((e)=>startQuiz(e));
+	handleButtonClick();
 	handleNextButtonClick();
 	//showFinalScore();
 	//restartQuiz();
