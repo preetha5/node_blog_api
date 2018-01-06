@@ -1,7 +1,7 @@
 const STORE = 
 	[	
 		{
-			question: "Which movie is this quote from : 'You can\'t handle the truth' ?",
+			question: 'Which movie is this quote from : "You can\'t handle the truth" ?',
 		 	options: ["A few Good Men", "Rules of Engagement", "The Departed", "Top Gun"],
 		 	answer: "A few Good Men",
 		},
@@ -109,9 +109,6 @@ function showFeedback(correctAnswer){
 //Check if the user selected the right answer and
 //update score accordingly
 function checkAnswer(selectedAnswer, correctAnswer){
-	
-	//console.log(selectedAnswer.text());
-	
 	selectedAnswer.addClass('highlight');
 	//Update Score
 	if(selectedAnswer.text() === correctAnswer){
@@ -120,7 +117,6 @@ function checkAnswer(selectedAnswer, correctAnswer){
 
 	updateScoreCard(currentScore, currentQuestion+1);
 	showFeedback(correctAnswer);
-	
 }
 
 //handle the answer submission event
@@ -134,6 +130,25 @@ function handleButtonClick(){
   	let correctAnswer = STORE[currentQuestion].answer;
   	checkAnswer(selectedAnswer, correctAnswer);
   });
+}
+
+//handle the next button clicks
+function handleNextButtonClick(){
+	$('.optionsForm').on('click', '.btnNext', (e)=>{
+		e.preventDefault();
+
+		currentQuestion++;
+		//After final question show the score page
+		console.log("lebtght of store is " +STORE.length);
+		console.log("current question is " + currentQuestion);
+		if(currentQuestion >= STORE.length){
+			showFinalScore();
+		} else{
+			console.log(`question number ${currentQuestion+1}`);
+			renderQuizPage();
+		}
+		
+	});
 }
 
 function updateQuestionCard(currentQuestion){
@@ -152,7 +167,6 @@ function updateScoreCard(currentScore, currentQuestion){
 function updateQuestionBox(STORE, currentQuestion){
 	$('.questionBox').empty();
 	const questionItem = `<h2>${STORE[currentQuestion].question}</h2>`;
-	//const questionItem = `<h2>Which movie is this quote from : 'You can't handle the truth' ?</h2>`;
 	$('.questionBox').html(questionItem);
 }
 
@@ -178,31 +192,6 @@ function renderQuizPage(){
 	updateOptions(STORE, currentQuestion);
 	updateQuestionCard(currentQuestion);
 	updateScoreCard(currentScore, currentQuestion);
-	//handleButtonClick();
-	//handleNextButtonClick();
-	//for each object in STORE
-	//Show the question
-	//Show the options
-	//update question card
-	//show current score
-}
-
-//handle the next button clicks
-function handleNextButtonClick(){
-	$('.optionsForm').on('click', '.btnNext', (e)=>{
-		e.preventDefault();
-		currentQuestion++;
-		//After final question show the score page
-		console.log("lebtght of store is " +STORE.length);
-		console.log("current question is " + currentQuestion);
-		if(currentQuestion >= STORE.length){
-			showFinalScore();
-		} else{
-			console.log(`question number ${currentQuestion+1}`);
-			renderQuizPage();
-		}
-		
-	});
 }
 
 //handle the start button click feature
@@ -220,8 +209,6 @@ function quizApp(){
 	$('.quizHome form').submit((e)=>startQuiz(e));
 	handleButtonClick();
 	handleNextButtonClick();
-	//showFinalScore();
-	//restartQuiz();
 }
 
 $(quizApp);
