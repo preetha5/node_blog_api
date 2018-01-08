@@ -1,53 +1,53 @@
 const STORE = 
 	[	
 		{
-			question: 'Which movie is this quote from : "You can\'t handle the truth" ?',
+			question: 'Which movie is this quote from: "You can\'t handle the truth"?',
 		 	options: ["A few Good Men", "Rules of Engagement", "The Departed", "Top Gun"],
 		 	answer: "A few Good Men",
 		},
 		{
-			question: 'Which movie is this quote from : "Keep you friends close, but enemies closer." ?',
+			question: 'Which movie is this quote from: "Keep you friends close, but enemies closer."?',
 		 	options: ["The Godfather 1", "The Godfather 2", "The Godfather 3", "GoodFellas"],
 		 	answer: "The Godfather 2",
 		},
 		{
-			question: 'Which movie is this quote from : "Here\'s Johnny." ?',
+			question: 'Which movie is this quote from: "Here\'s Johnny."?',
 		 	options: ["The Terminator", "Ghost Rider", "The Shining", "The Treasure Island"],
 		 	answer: "The Shining",
 		},
 		{
-			question: 'Which movie is this quote from : "Hasta la vista, baby." ?',
+			question: 'Which movie is this quote from: "Hasta la vista, baby." ?',
 		 	options: ["Terminator", "Terminator 2 : Judgement Day", "Terminator 3: Rise of the Machines", "Total Recall"],
 		 	answer: "Terminator 2 : Judgement Day",
 		},
 		{
-			question: '"My Precious" - Who says this in the movie "Lord of the Rings" ?',
+			question: '"My Precious" - Who says this in the movie "Lord of the Rings"?',
 		 	options: ["Frodo Baggins", "Gimli", "Gollum", "Bilbo Baggins"],
 		 	answer: "Gollum",
 		},
 		{
-			question: 'Which movie is this quote from :"Open the pod bay doors, please HAL"?',
+			question: 'Which movie is this quote from: "Open the pod bay doors, please HAL"?',
 		 	options: ["2001 - Space Odyssey", "Gravity", "Planet of the Apes", "Apollo 18"],
 		 	answer: "2001 - Space Odyssey",
 		},
 		{
-			question: 'Which of the Star Wars character is famous for this quote :"Do or Do not. There is no try."?',
+			question: 'Which of the Star Wars character is famous for this quote: "Do or Do not. There is no try."?',
 		 	options: ["Hans Solo", "Luke Skywalker", "Obi-Wan Kenobi", "Yoda"],
 		 	answer: "Yoda",
 		},
 		{
-			question: 'Which character from Harry Potter series says :"Of course its happening in your head Harry, but \
+			question: 'Which character from Harry Potter series says: "Of course its happening in your head Harry, but \
 			 why on earth should that mean it is not real"?',
 		 	options: ["Lord Voldemort", "Hermione Granger", "Albus Dumbledore", "Ron Weasley"],
 		 	answer: "Albus Dumbledore",
 		},
 		{
-			question: 'Which movie is this quote from :"Frankly, my dear, I don\'t give a damn."?',
+			question: 'Which movie is this quote from: "Frankly, my dear, I don\'t give a damn."?',
 		 	options: ["Gone with the wind", "Doctor Zhivago", "The Titanic", "Ben-Hur"],
 		 	answer: "Gone with the wind",
 		},
 		{
-			question: 'Which movie is this quote from :"A census taker once tried to test me. I ate his liver with \
+			question: 'Which movie is this quote from: "A census taker once tried to test me. I ate his liver with \
 			some fava beans and a nice chianti."?',
 		 	options: ["Red Dragon", "Psycho", "Zodiac", "Silence of the lambs"],
 		 	answer: "Silence of the lambs",
@@ -136,7 +136,6 @@ function handleButtonClick(){
 function handleNextButtonClick(){
 	$('.optionsForm').on('click', '.btnNext', (e)=>{
 		e.preventDefault();
-
 		currentQuestion++;
 		//After final question show the score page
 		console.log("lebtght of store is " +STORE.length);
@@ -175,7 +174,7 @@ function updateOptions(STORE, currentQuestion){
 	let options ='';
 	$('.optionsForm').empty();
 	list.forEach(item=>{
-		 options += `<button type="button" class="option">${item}</button>`;
+		 options += `<button type="button" autofocus class="option">${item}</button>`;
 	});
 	const optionsList = `<form action="#" method="post" >
 							${options}
