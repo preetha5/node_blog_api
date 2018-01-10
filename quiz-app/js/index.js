@@ -43,8 +43,8 @@ const STORE =
 		},
 		{
 			question: 'Which movie is this quote from: "Frankly, my dear, I don\'t give a damn."?',
-		 	options: ["Gone with the wind", "Doctor Zhivago", "The Titanic", "Ben-Hur"],
-		 	answer: "Gone with the wind",
+		 	options: ["Gone with the Wind", "Doctor Zhivago", "The Titanic", "Ben-Hur"],
+		 	answer: "Gone with the Wind",
 		},
 		{
 			question: 'Which movie is this quote from: "A census taker once tried to test me. I ate his liver with \
@@ -61,10 +61,8 @@ let currentScore = 0, currentQuestion = 0;
 //Hide the final score page
 //Go back to first question page
 function restartQuiz(){
-	console.log('restarting quiz ...');
 	$('.final').on('click', '.replay', (e) => {
   		e.stopPropagation();
-		console.log("restarting game..");
 	   currentScore = 0, currentQuestion = 0;
 	   $('.final').css("display", "none");
 	   startQuiz(e);
@@ -73,7 +71,6 @@ function restartQuiz(){
 
 //Show the final score and option to replay the game
 function showFinalScore(){
-  console.log("showing final score..");
   $('main section').css("display", "none");
   let scoreString = `${currentScore}/${currentQuestion}`;
   $('.final .score').text(scoreString);
@@ -94,12 +91,9 @@ function showFeedback(correctAnswer){
 	$('.btnNext').attr("disabled", false);
 	let options = $('.option');
 	options.each((index,item) => {
-		console.log($(item).text());
 		if ($(item).text() === correctAnswer){
-			console.log("correct");
 			$(item).append(rightString);
 		} else{
-			console.log("wrong");
 			$(item).append(wrongString);
 		}
 	});
@@ -138,12 +132,9 @@ function handleNextButtonClick(){
 		e.preventDefault();
 		currentQuestion++;
 		//After final question show the score page
-		console.log("lebtght of store is " +STORE.length);
-		console.log("current question is " + currentQuestion);
 		if(currentQuestion >= STORE.length){
 			showFinalScore();
 		} else{
-			console.log(`question number ${currentQuestion+1}`);
 			renderQuizPage();
 		}
 		
@@ -158,7 +149,6 @@ function updateQuestionCard(currentQuestion){
 
 function updateScoreCard(currentScore, currentQuestion){
 	$('.scoreCard').empty();
-	console.log(currentScore);
 	const scoreCard = `<p>Score: <span class="score">${currentScore}/${currentQuestion}</span></p>`;
 	$('.scoreCard').html(scoreCard);
 }
@@ -174,13 +164,18 @@ function updateOptions(STORE, currentQuestion){
 	let options ='';
 	$('.optionsForm').empty();
 	list.forEach(item=>{
-		 options += `<button type="button" autofocus class="option">${item}</button>`;
+		 options += `<button type="button" class="option">${item}</button>`;
 	});
 	const optionsList = `<form action="#" method="post" >
+							<fieldset>
+							<legend>Answer choices are:</legend>
 							${options}
 							<button type='submit' disabled class="btnNext">Next</button>
+							</fieldset>
 						</form>`;
 	$('.optionsForm').html(optionsList);
+	//Add autofocus to the first option by default
+	$('.optionsForm .option:first').focus();
 }
 
 //Display the current question and answer, 
@@ -195,7 +190,6 @@ function renderQuizPage(){
 
 //handle the start button click feature
 function startQuiz(e){
-  	console.log("quiz starting....");
   	e.preventDefault();
   	$('main section').css("display", "none");
   	$('.tracking, .questionBox, .optionsForm').css("display", "block");

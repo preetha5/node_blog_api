@@ -28,10 +28,17 @@ header h1, .questionBox h2{
 }
 main{
 	max-width: 960px;
-	height1: auto;
 	margin: 0 auto;
 	border: solid 1px ;
-	background-color1: rgba(256,256,256, .2);
+}
+
+/*Legend only for screen reader support
+Can be hidden visually*/
+fieldset{
+	border: none;
+}
+legend{
+	font-size: 0;
 }
 
 input[name="start"], input[name="replay"]{
@@ -49,7 +56,7 @@ input[name="start"], input[name="replay"]{
 
 input[name="start"]:hover:enabled, input[name="start"]:focus, input[name="replay"]:hover:enabled, input[name="replay"]:focus{
 	font-size: 1.5em;
-	border: solid 1px #FFF3B0;;
+	border: solid 1px #FFF3B0;
 }
 
 .tracking, .questionBox, .optionsForm, .final{
@@ -85,14 +92,13 @@ input[name="start"]:hover:enabled, input[name="start"]:focus, input[name="replay
 
 .questionBox{
 	width: 80%;
-    margin: 1em 10% 2em;
+    margin: 1em 10%;
     height: 15vh;
 }
 
 .optionsForm{
 	width: 90%;
     margin: 1em 5% 2em;
-    height1: 19vh;
 }
 
 .optionsForm form{
@@ -181,10 +187,6 @@ input[name="start"]:hover:enabled, input[name="start"]:focus, input[name="replay
 		font-size: 25px;
 	}
 
-	.quizHome{
-		top1:40%;
-		}
-
 	.trackingCard{
 		width: 20%;
 	}
@@ -195,7 +197,6 @@ input[name="start"]:hover:enabled, input[name="start"]:focus, input[name="replay
     }
 
     .questionBox{
-	    margin: 1em 10%;
 	    height: 10vh;
 	}
 
