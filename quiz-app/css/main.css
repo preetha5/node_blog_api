@@ -202,7 +202,7 @@ input[name="start"]:hover:enabled, input[name="start"]:focus, input[name="replay
 
     .optionsForm .option, .btnNext{
     	font-size: 18px;
-    	padding: 10px 15px;
+    	padding: 6px;
     }
 
   }

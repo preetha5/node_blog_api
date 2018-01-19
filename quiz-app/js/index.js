@@ -6,7 +6,7 @@ const STORE =
 		 	answer: "A few Good Men",
 		},
 		{
-			question: 'Which movie is this quote from: "Keep you friends close, but enemies closer."?',
+			question: 'Which movie is this quote from: "Keep your friends close, but enemies closer."?',
 		 	options: ["The Godfather 1", "The Godfather 2", "The Godfather 3", "GoodFellas"],
 		 	answer: "The Godfather 2",
 		},
@@ -88,7 +88,7 @@ function showFeedback(correctAnswer){
 	//disable the option buttons
   	$('.option').attr("disabled", "disabled");
   	//Enable the next button
-	$('.btnNext').attr("disabled", false);
+	$('.btnNext').attr({"disabled": false,"aria-pressed":false}).focus();
 	let options = $('.option');
 	options.each((index,item) => {
 		if ($(item).text() === correctAnswer){
@@ -120,7 +120,8 @@ function checkAnswer(selectedAnswer, correctAnswer){
 function handleButtonClick(){
 	$('.optionsForm').on('click', '.option', (e) => {
   	e.stopPropagation();
-  	let selectedAnswer = $(e.currentTarget);
+	let selectedAnswer = $(e.currentTarget);
+	selectedAnswer.attr('aria-pressed', true); 
   	let correctAnswer = STORE[currentQuestion].answer;
   	checkAnswer(selectedAnswer, correctAnswer);
   });
@@ -130,6 +131,7 @@ function handleButtonClick(){
 function handleNextButtonClick(){
 	$('.optionsForm').on('click', '.btnNext', (e)=>{
 		e.preventDefault();
+		$('.btnNext').attr({"aria-pressed":true});
 		currentQuestion++;
 		//After final question show the score page
 		if(currentQuestion >= STORE.length){
@@ -168,9 +170,10 @@ function updateOptions(STORE, currentQuestion){
 	});
 	const optionsList = `<form action="#" method="post" >
 							<fieldset>
-							<legend>Answer choices are:</legend>
+							<legend><h2>${STORE[currentQuestion].question}</h2></legend>
 							${options}
-							<button type='submit' disabled class="btnNext">Next</button>
+							<button type='submit' disabled class="btnNext" 
+							aria-label="next question">Next</button>
 							</fieldset>
 						</form>`;
 	$('.optionsForm').html(optionsList);
@@ -182,7 +185,7 @@ function updateOptions(STORE, currentQuestion){
 //while beginning the quiz it will be the first question
 // and the corresponding 4 answer options
 function renderQuizPage(){
-	updateQuestionBox(STORE, currentQuestion);
+	//updateQuestionBox(STORE, currentQuestion);
 	updateOptions(STORE, currentQuestion);
 	updateQuestionCard(currentQuestion);
 	updateScoreCard(currentScore, currentQuestion);
