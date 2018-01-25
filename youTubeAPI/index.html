@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <header>
-        <h1>SEARCH FOR YOUR FAVOURITE YOUTUBE VIDEOS</h1>
+    <header role="banner">
+        <h1>ThinkfulTube</h1>
+        <p>SEARCH FOR YOUR FAVOURITE YOUTUBE VIDEOS</p>
     </header>
-    <main>
+    <main role="main">
         <form action="#" id="searchForm">
-            <input type="text" class="search js-search-field">
+            <input type="text" class="search js-search-field" aria-label="search box" 
+            placeholder="Enter your search keyword" autofocus required>
             <input type="submit" value = "SEARCH">
         </form>
-        <section class="js-resultSection">
+        <section class="js-resultSection" aria-live="assertive">
             
         </section>
     </main>
