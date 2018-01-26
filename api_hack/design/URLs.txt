@@ -1,0 +1,155 @@
+Zomato
+
+Headers:
+const baseUrl = 'https://developers.zomato.com/api/v2.1/'
+
+const headerVals = {'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'user-key': apiKey};
+
+qUERY1:
+https://developers.zomato.com/api/v2.1/cities?q=San%20Diego
+
+qUERY2:
+https://developers.zomato.com/api/v2.1/search?entity_id=302&entity_type=city&cuisines=308&sort=rating
+
+
+Response Body
+{
+  "results_found": 106,
+  "results_start": 0,
+  "results_shown": 20,
+  "restaurants": [
+    {
+      "restaurant": {
+        "R": {
+          "res_id": 17071842
+        },
+        "apikey": "5e07d543a08ec1f65b9ef497e9c9e1b4",
+        "id": "17071842",
+        "name": "Rico's Taco Shop",
+        "url": "https://www.zomato.com/san-diego/ricos-taco-shop-encinitas?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "location": {
+          "address": "165 S El Camino Real, Encinitas 92024",
+          "locality": "Encinitas",
+          "city": "San Diego",
+          "city_id": 302,
+          "latitude": "33.0436290000",
+          "longitude": "-117.2593340000",
+          "zipcode": "92024",
+          "country_id": 216,
+          "locality_verbose": "Encinitas, San Diego"
+        },
+        "switch_to_order_menu": 0,
+        "cuisines": "Mexican, Vegetarian",
+        "average_cost_for_two": 10,
+        "price_range": 1,
+        "currency": "$",
+        "offers": [],
+        "thumb": "",
+        "user_rating": {
+          "aggregate_rating": "4.6",
+          "rating_text": "Excellent",
+          "rating_color": "3F7E00",
+          "votes": "470"
+        },
+        "photos_url": "https://www.zomato.com/san-diego/ricos-taco-shop-encinitas/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+        "menu_url": "https://www.zomato.com/san-diego/ricos-taco-shop-encinitas/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+        "featured_image": "",
+        "has_online_delivery": 0,
+        "is_delivering_now": 0,
+        "deeplink": "zomato://restaurant/17071842",
+        "has_table_booking": 0,
+        "events_url": "https://www.zomato.com/san-diego/ricos-taco-shop-encinitas/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "establishment_types": []
+      }
+    },
+    {
+      "restaurant": {
+        "R": {
+          "res_id": 17069270
+        },
+        "apikey": "5e07d543a08ec1f65b9ef497e9c9e1b4",
+        "id": "17069270",
+        "name": "El Zarape Mexican",
+        "url": "https://www.zomato.com/san-diego/el-zarape-mexican-san-diego?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "location": {
+          "address": "4642 Park Blvd, San Diego 92116",
+          "locality": "University Heights",
+          "city": "San Diego",
+          "city_id": 302,
+          "latitude": "32.7616330000",
+          "longitude": "-117.1464620000",
+          "zipcode": "92116",
+          "country_id": 216,
+          "locality_verbose": "University Heights, San Diego"
+        },
+        "switch_to_order_menu": 0,
+        "cuisines": "Mexican, Seafood, Vegetarian",
+        "average_cost_for_two": 10,
+        "price_range": 1,
+        "currency": "$",
+        "offers": [],
+        "thumb": "",
+        "user_rating": {
+          "aggregate_rating": "4.4",
+          "rating_text": "Very Good",
+          "rating_color": "5BA829",
+          "votes": "557"
+        },
+        "photos_url": "https://www.zomato.com/san-diego/el-zarape-mexican-san-diego/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+        "menu_url": "https://www.zomato.com/san-diego/el-zarape-mexican-san-diego/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+        "featured_image": "",
+        "has_online_delivery": 0,
+        "is_delivering_now": 0,
+        "deeplink": "zomato://restaurant/17069270",
+        "has_table_booking": 0,
+        "events_url": "https://www.zomato.com/san-diego/el-zarape-mexican-san-diego/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "establishment_types": []
+      }
+    },
+    {
+      "restaurant": {
+        "R": {
+          "res_id": 17074121
+        },
+        "apikey": "5e07d543a08ec1f65b9ef497e9c9e1b4",
+        "id": "17074121",
+        "name": "Tender Greens",
+        "url": "https://www.zomato.com/san-diego/tender-greens-point-loma?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "location": {
+          "address": "2400 Historic Decatur Road, San Diego 92106",
+          "locality": "Point Loma",
+          "city": "San Diego",
+          "city_id": 302,
+          "latitude": "32.7350530000",
+          "longitude": "-117.2161720000",
+          "zipcode": "92106",
+          "country_id": 216,
+          "locality_verbose": "Point Loma, San Diego"
+        },
+        "switch_to_order_menu": 0,
+        "cuisines": "American, Vegetarian, Healthy Food",
+        "average_cost_for_two": 10,
+        "price_range": 1,
+        "currency": "$",
+        "offers": [],
+        "thumb": "https://b.zmtcdn.com/data/res_imagery/17074121_RESTAURANT_ff5779ab292d6363992738993b0ad432.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+        "user_rating": {
+          "aggregate_rating": "4.4",
+          "rating_text": "Very Good",
+          "rating_color": "5BA829",
+          "votes": "444"
+        },
+        "photos_url": "https://www.zomato.com/san-diego/tender-greens-point-loma/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
+        "menu_url": "https://www.zomato.com/san-diego/tender-greens-point-loma/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
+        "featured_image": "https://b.zmtcdn.com/data/res_imagery/17074121_RESTAURANT_ff5779ab292d6363992738993b0ad432.jpg",
+        "has_online_delivery": 0,
+        "is_delivering_now": 0,
+        "deeplink": "zomato://restaurant/17074121",
+        "has_table_booking": 0,
+        "events_url": "https://www.zomato.com/san-diego/tender-greens-point-loma/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
+        "establishment_types": []
+      }
+    },
+]}
