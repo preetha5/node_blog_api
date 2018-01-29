@@ -1,0 +1,67 @@
+﻿<!doctype html><html><head><meta charset="utf-8"><style>
+      /* Separated from document_view.css to enable use in downloadable
+   export files. #cutAndCopyBucket is included for every rule because
+   we wwant cut/copied items to be formatted the same way as they
+   would be when exported. */
+
+.formattedExport,
+#cutAndCopyBucket {
+    font-family: 'Helvetica Neue', Arial, Sans-serif;
+    color: #333;
+    font-size: 13px;
+    line-height: 17px;
+    /* used to set white-space: pre-wrap here, but that messes up GMail's
+       formatting of the export output, so moving that to the name and
+       notes separately. */
+}
+
+.formattedExport .name, .formattedExport .note,
+#cutAndCopyBucket .name, #cutAndCopyBucket .note {
+    white-space: pre-wrap;
+}
+
+.formattedExport ul,
+#cutAndCopyBucket ul{
+    list-style: disc;
+    /* Needed to reset browser defaults. */
+    margin: 0;
+    padding: 0;
+}
+
+.formattedExport li,
+#cutAndCopyBucket li {
+    margin: 4px 0 4px 20px;
+    /* Needed to reset browser defaults. */
+    padding: 0;
+}
+
+.formattedExport > .name,
+#cutAndCopyBucket > .name {
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.formattedExport > .note,
+#cutAndCopyBucket > .note {
+    font-size: 13px;
+    line-height: 17px;
+}
+
+.formattedExport > ul,
+#cutAndCopyBucket > ul {
+    margin-top: 15px;
+}
+
+.formattedExport .name.done,
+#cutAndCopyBucket .name.done {
+    text-decoration:line-through;
+    color:#999;
+}
+
+.formattedExport .note,
+#cutAndCopyBucket .note {
+    font-size: 12px;
+    color:#666;
+}
+
+      </style></head><body class="formattedExport"><ul><li><span class="name">LANDING PAGE</span><ul><li><span class="name">Slider</span><ul><li><span class="name">Contain a 5-10 slides <span class="contentBold">slider</span> that give interesting information about the benefit of opting for a vegetarian meal.</span></li><li><span class="name">Slider will pull this info from a JSON format file.</span></li></ul></li><li><span class="name">Headline - H1</span><ul><li><span class="name">Welcome heading and app name.</span></li></ul></li><li><span class="name">Supporting Copy - Couple of sentences about the goal of this app</span></li><li><span class="name">Filtering Logic ( EVENT ) for Main Content - Primary Action</span><ul><li><span class="name">Set of Selector Options</span><ul><li><span class="name">Do you want to cook?</span></li><li><span class="name">Do you want to eat out?</span></li></ul></li><li><span class="name">Event listener will listen to the click and open the corresponding search box below it .</span></li></ul></li><li><span class="name">Search Box - Cook option selected</span><ul><li><span class="name">For the basic version user is prompted to enter keywords to search for a vegetarian recipe.</span></li><li><span class="name">Keywords could be ingredients, name of the dish or cuisine name .</span></li><li><span class="name">Examples of search "carrots potatoes" , "quick indian curry ", "vegan pad thai" etc..</span></li></ul></li><li><span class="name">Search Box - Dine out option selected</span><ul><li><span class="name">Search box with an input field to obtain a destination city.</span></li><li><span class="name">keywords can be sandiego, bangkok, montreal etc..</span></li></ul></li><li><span class="name">API Queries</span><ul><li><span class="name">Based on the initial selector chosen the endpoint URL is selected.</span></li><li><span class="name">Query string from the search keywords is concatenated with the string "vegetarian" .</span></li><li><span class="name">The URL and query is sent in a AJAX request and corresponding data is obtained either with a single and nested API calls.</span></li></ul></li><li><span class="name">Search  Results Page (Dynamic)</span><ul><li><span class="name">The search page will be dynamically added below the landing page and above the info page, with some kind of transition .</span></li><li><span class="name">Headline - H2</span></li><li><span class="name">Listings are Secondary Actions</span><ul><li><span class="name">Ul / LI Listings</span><ul><li><span class="name">The JSON data returned from AJAX call is parsed and html is generated in lists</span></li><li><span class="name">Ideally show 4-5 options on the page and have a "Load more" button to retrieve 5 more.</span></li><li><span class="name">Recipe Search </span><ul><li><span class="name">The list will contain an image of the recipe </span></li><li><span class="name">recipe name</span></li><li><span class="name">calorie details (if applicable)</span></li><li><span class="name">The list item will be linked to take the user to the actual recipe page.</span></li><li><span class="name">Phase 2 : On clicking the image show a pop up modal/lightbox with recipe instructions , ingredients etc and in there provide a url to take user to original recipe website.</span></li></ul></li><li><span class="name">Restaurant Search</span><ul><li><span class="name">The list will contain the restaurant name</span></li><li><span class="name">Image for the restaurant if applicable.</span></li><li><span class="name">Clicking on the image will take user to the restaurant website.</span></li><li><span class="name">Phase 2 : Find a mechanism to gather user zipcode and show distance/directions to the restaurant.</span></li></ul></li></ul></li></ul></li></ul></li><li><span class="name">Information Page</span><ul><li><span class="name">This page will have article blurbs to give more in depth information to inpire folks to eat more vegetarian in a box format.</span></li><li><span class="name">Ideas : comic page style info, web md article, wikipedia article</span></li><li><span class="name">Phase 2 : Show meetups and groups in the user neighborhood that support vegetarianism or veganism.</span></li></ul></li></ul></li></ul></body></html>

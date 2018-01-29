@@ -1,181 +1,3 @@
-Zomato
-
-Headers:
-const baseUrl = 'https://developers.zomato.com/api/v2.1/'
-
-const headerVals = {'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'user-key': apiKey};
-
-qUERY1:
-https://developers.zomato.com/api/v2.1/cities?q=San%20Diego
-
-qUERY2:
-https://developers.zomato.com/api/v2.1/search?entity_id=302&entity_type=city&cuisines=308&sort=rating
-
-Query from zomato:
-https://www.zomato.com/index.php?entity_type=city&entity_id=279&cuisine=66&city=279
-
-
-Response Body
-{
-  "results_found": 106,
-  "results_start": 0,
-  "results_shown": 20,
-  "restaurants": [
-    {
-      "restaurant": {
-        "R": {
-          "res_id": 17071842
-        },
-        "apikey": "5e07d543a08ec1f65b9ef497e9c9e1b4",
-        "id": "17071842",
-        "name": "Rico's Taco Shop",
-        "url": "https://www.zomato.com/san-diego/ricos-taco-shop-encinitas?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "location": {
-          "address": "165 S El Camino Real, Encinitas 92024",
-          "locality": "Encinitas",
-          "city": "San Diego",
-          "city_id": 302,
-          "latitude": "33.0436290000",
-          "longitude": "-117.2593340000",
-          "zipcode": "92024",
-          "country_id": 216,
-          "locality_verbose": "Encinitas, San Diego"
-        },
-        "switch_to_order_menu": 0,
-        "cuisines": "Mexican, Vegetarian",
-        "average_cost_for_two": 10,
-        "price_range": 1,
-        "currency": "$",
-        "offers": [],
-        "thumb": "",
-        "user_rating": {
-          "aggregate_rating": "4.6",
-          "rating_text": "Excellent",
-          "rating_color": "3F7E00",
-          "votes": "470"
-        },
-        "photos_url": "https://www.zomato.com/san-diego/ricos-taco-shop-encinitas/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
-        "menu_url": "https://www.zomato.com/san-diego/ricos-taco-shop-encinitas/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
-        "featured_image": "",
-        "has_online_delivery": 0,
-        "is_delivering_now": 0,
-        "deeplink": "zomato://restaurant/17071842",
-        "has_table_booking": 0,
-        "events_url": "https://www.zomato.com/san-diego/ricos-taco-shop-encinitas/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "establishment_types": []
-      }
-    },
-    {
-      "restaurant": {
-        "R": {
-          "res_id": 17069270
-        },
-        "apikey": "5e07d543a08ec1f65b9ef497e9c9e1b4",
-        "id": "17069270",
-        "name": "El Zarape Mexican",
-        "url": "https://www.zomato.com/san-diego/el-zarape-mexican-san-diego?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "location": {
-          "address": "4642 Park Blvd, San Diego 92116",
-          "locality": "University Heights",
-          "city": "San Diego",
-          "city_id": 302,
-          "latitude": "32.7616330000",
-          "longitude": "-117.1464620000",
-          "zipcode": "92116",
-          "country_id": 216,
-          "locality_verbose": "University Heights, San Diego"
-        },
-        "switch_to_order_menu": 0,
-        "cuisines": "Mexican, Seafood, Vegetarian",
-        "average_cost_for_two": 10,
-        "price_range": 1,
-        "currency": "$",
-        "offers": [],
-        "thumb": "",
-        "user_rating": {
-          "aggregate_rating": "4.4",
-          "rating_text": "Very Good",
-          "rating_color": "5BA829",
-          "votes": "557"
-        },
-        "photos_url": "https://www.zomato.com/san-diego/el-zarape-mexican-san-diego/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
-        "menu_url": "https://www.zomato.com/san-diego/el-zarape-mexican-san-diego/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
-        "featured_image": "",
-        "has_online_delivery": 0,
-        "is_delivering_now": 0,
-        "deeplink": "zomato://restaurant/17069270",
-        "has_table_booking": 0,
-        "events_url": "https://www.zomato.com/san-diego/el-zarape-mexican-san-diego/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "establishment_types": []
-      }
-    },
-    {
-      "restaurant": {
-        "R": {
-          "res_id": 17074121
-        },
-        "apikey": "5e07d543a08ec1f65b9ef497e9c9e1b4",
-        "id": "17074121",
-        "name": "Tender Greens",
-        "url": "https://www.zomato.com/san-diego/tender-greens-point-loma?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "location": {
-          "address": "2400 Historic Decatur Road, San Diego 92106",
-          "locality": "Point Loma",
-          "city": "San Diego",
-          "city_id": 302,
-          "latitude": "32.7350530000",
-          "longitude": "-117.2161720000",
-          "zipcode": "92106",
-          "country_id": 216,
-          "locality_verbose": "Point Loma, San Diego"
-        },
-        "switch_to_order_menu": 0,
-        "cuisines": "American, Vegetarian, Healthy Food",
-        "average_cost_for_two": 10,
-        "price_range": 1,
-        "currency": "$",
-        "offers": [],
-        "thumb": "https://b.zmtcdn.com/data/res_imagery/17074121_RESTAURANT_ff5779ab292d6363992738993b0ad432.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
-        "user_rating": {
-          "aggregate_rating": "4.4",
-          "rating_text": "Very Good",
-          "rating_color": "5BA829",
-          "votes": "444"
-        },
-        "photos_url": "https://www.zomato.com/san-diego/tender-greens-point-loma/photos?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1#tabtop",
-        "menu_url": "https://www.zomato.com/san-diego/tender-greens-point-loma/menu?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1&openSwipeBox=menu&showMinimal=1#tabtop",
-        "featured_image": "https://b.zmtcdn.com/data/res_imagery/17074121_RESTAURANT_ff5779ab292d6363992738993b0ad432.jpg",
-        "has_online_delivery": 0,
-        "is_delivering_now": 0,
-        "deeplink": "zomato://restaurant/17074121",
-        "has_table_booking": 0,
-        "events_url": "https://www.zomato.com/san-diego/tender-greens-point-loma/events#tabtop?utm_source=api_basic_user&utm_medium=api&utm_campaign=v2.1",
-        "establishment_types": []
-      }
-    },
-]}
-
-
-*********************************************EDAMAM API *********************************************
-
-Application ID  69992146
-
-Application Keys
-Create new key
-c6f65fe807883f1ff2522326f432f2b4	—
-
-
-URL:
-curl "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free"
-
-https://api.edamam.com/search?q=vegetarian%20india&app_id=69992146&app_key=c6f65fe807883f1ff2522326f432f2b4&from=0&to=3&calories=gte%20591,%20lte%20722&health=alcohol-free
-
-https://api.edamam.com/search?q=carrot%2520vegetarian&app_id=69992146&app_key=c6f65fe807883f1ff2522326f432f2b4&from=0&to=5
-
-
-REPSONSE:
 {
 "q": "vegetarian india",
 "from": 0,
@@ -187,9 +9,6 @@ REPSONSE:
 ],
 "app_key": [
 "c6f65fe807883f1ff2522326f432f2b4"
-],
-"health": [
-"alcohol-free"
 ],
 "from": [
 "0"
@@ -208,21 +27,13 @@ REPSONSE:
 "count": 2,
 "hits": [
 {
-"recipe": {},
-"bookmarked": false,
-"bought": false
-},
-]
-
-
-RECIPE OBJECT SAMPLE :
 "recipe": {
 "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_74ef9a9674bd1d6033162698867c8563",
 "label": "Hakka Noodles recipes",
 "image": "https://www.edamam.com/web-img/3a1/3a17b35cd4951664d4f4469638b381a1",
 "source": "ecurry.com",
 "url": "http://www.ecurry.com/blog/pasta-pizza/hakka-noodles/",
-"shareAs": "http://www.edamam.com/recipe/hakka-noodles-recipes-74ef9a9674bd1d6033162698867c8563/vegetarian+india/alcohol-free/591-722-cal",
+"shareAs": "http://www.edamam.com/recipe/hakka-noodles-recipes-74ef9a9674bd1d6033162698867c8563/vegetarian+india/591-722-cal",
 "yield": 4,
 "dietLabels": [
 "Balanced"
@@ -631,3 +442,304 @@ RECIPE OBJECT SAMPLE :
 "unit": "%"
 }
 },
+"digest": [
+{
+"label": "Fat",
+"tag": "FAT",
+"schemaOrgTag": "fatContent",
+"total": 80.2823513053894,
+"hasRDI": true,
+"daily": 123.51130970059909,
+"unit": "g",
+"sub": [
+{
+"label": "Saturated",
+"tag": "FASAT",
+"schemaOrgTag": "saturatedFatContent",
+"total": 13.72435945075035,
+"hasRDI": true,
+"daily": 68.62179725375175,
+"unit": "g"
+},
+{
+"label": "Trans",
+"tag": "FATRN",
+"schemaOrgTag": "transFatContent",
+"total": 0.244,
+"hasRDI": false,
+"daily": 0,
+"unit": "g"
+},
+{
+"label": "Monounsaturated",
+"tag": "FAMS",
+"schemaOrgTag": null,
+"total": 28.732337403974533,
+"hasRDI": false,
+"daily": 0,
+"unit": "g"
+},
+{
+"label": "Polyunsaturated",
+"tag": "FAPU",
+"schemaOrgTag": null,
+"total": 31.549365024118426,
+"hasRDI": false,
+"daily": 0,
+"unit": "g"
+}
+]
+},
+{
+"label": "Carbs",
+"tag": "CHOCDF",
+"schemaOrgTag": "carbohydrateContent",
+"total": 373.3007205926895,
+"hasRDI": true,
+"daily": 124.43357353089651,
+"unit": "g",
+"sub": [
+{
+"label": "Carbs (net)",
+"tag": "CHOCDF.net",
+"schemaOrgTag": null,
+"total": 333.84677139873503,
+"hasRDI": false,
+"daily": 0,
+"unit": "g"
+},
+{
+"label": "Fiber",
+"tag": "FIBTG",
+"schemaOrgTag": "fiberContent",
+"total": 39.45394919395447,
+"hasRDI": true,
+"daily": 157.8157967758179,
+"unit": "g"
+},
+{
+"label": "Sugars",
+"tag": "SUGAR",
+"schemaOrgTag": "sugarContent",
+"total": 43.749572497940065,
+"hasRDI": false,
+"daily": 0,
+"unit": "g"
+},
+{
+"label": "Sugars, added",
+"tag": "SUGAR.added",
+"schemaOrgTag": null,
+"total": 0,
+"hasRDI": false,
+"daily": 0,
+"unit": "g"
+}
+]
+},
+{
+"label": "Protein",
+"tag": "PROCNT",
+"schemaOrgTag": "proteinContent",
+"total": 78.81386885261534,
+"hasRDI": true,
+"daily": 157.6277377052307,
+"unit": "g"
+},
+{
+"label": "Cholesterol",
+"tag": "CHOLE",
+"schemaOrgTag": "cholesterolContent",
+"total": 336,
+"hasRDI": true,
+"daily": 112,
+"unit": "mg"
+},
+{
+"label": "Sodium",
+"tag": "NA",
+"schemaOrgTag": "sodiumContent",
+"total": 7756.606791908188,
+"hasRDI": true,
+"daily": 323.1919496628412,
+"unit": "mg"
+},
+{
+"label": "Calcium",
+"tag": "CA",
+"schemaOrgTag": null,
+"total": 590.0982395322418,
+"hasRDI": true,
+"daily": 59.00982395322418,
+"unit": "mg"
+},
+{
+"label": "Magnesium",
+"tag": "MG",
+"schemaOrgTag": null,
+"total": 487.4301620676422,
+"hasRDI": true,
+"daily": 121.85754051691055,
+"unit": "mg"
+},
+{
+"label": "Potassium",
+"tag": "K",
+"schemaOrgTag": null,
+"total": 3727.7836684626773,
+"hasRDI": true,
+"daily": 106.50810481321935,
+"unit": "mg"
+},
+{
+"label": "Iron",
+"tag": "FE",
+"schemaOrgTag": null,
+"total": 25.70251255176468,
+"hasRDI": true,
+"daily": 142.79173639869268,
+"unit": "mg"
+},
+{
+"label": "Zinc",
+"tag": "ZN",
+"schemaOrgTag": null,
+"total": 11.595146660923001,
+"hasRDI": true,
+"daily": 77.30097773948667,
+"unit": "mg"
+},
+{
+"label": "Phosphorus",
+"tag": "P",
+"schemaOrgTag": null,
+"total": 1491.95075340271,
+"hasRDI": true,
+"daily": 213.13582191467285,
+"unit": "mg"
+},
+{
+"label": "Vitamin A",
+"tag": "VITA_RAE",
+"schemaOrgTag": null,
+"total": 1609.0340704822538,
+"hasRDI": true,
+"daily": 178.78156338691707,
+"unit": "µg"
+},
+{
+"label": "Vitamin C",
+"tag": "VITC",
+"schemaOrgTag": null,
+"total": 260.9446873283386,
+"hasRDI": true,
+"daily": 434.90781221389767,
+"unit": "mg"
+},
+{
+"label": "Thiamin (B1)",
+"tag": "THIA",
+"schemaOrgTag": null,
+"total": 5.2720972584247585,
+"hasRDI": true,
+"daily": 351.4731505616506,
+"unit": "mg"
+},
+{
+"label": "Riboflavin (B2)",
+"tag": "RIBF",
+"schemaOrgTag": null,
+"total": 2.562919549560547,
+"hasRDI": true,
+"daily": 150.75997350356158,
+"unit": "mg"
+},
+{
+"label": "Niacin (B3)",
+"tag": "NIA",
+"schemaOrgTag": null,
+"total": 42.671079094944,
+"hasRDI": true,
+"daily": 213.35539547471998,
+"unit": "mg"
+},
+{
+"label": "Vitamin B6",
+"tag": "VITB6A",
+"schemaOrgTag": null,
+"total": 2.7433876897811884,
+"hasRDI": true,
+"daily": 137.1693844890594,
+"unit": "mg"
+},
+{
+"label": "Folate equivalent (total)",
+"tag": "FOLDFE",
+"schemaOrgTag": null,
+"total": 1799.8381827640537,
+"hasRDI": true,
+"daily": 449.95954569101343,
+"unit": "µg"
+},
+{
+"label": "Folate (food)",
+"tag": "FOLFD",
+"schemaOrgTag": null,
+"total": 435.8381827640533,
+"hasRDI": false,
+"daily": 0,
+"unit": "µg"
+},
+{
+"label": "Folic acid",
+"tag": "FOLAC",
+"schemaOrgTag": null,
+"total": 804,
+"hasRDI": false,
+"daily": 0,
+"unit": "µg"
+},
+{
+"label": "Vitamin B12",
+"tag": "VITB12",
+"schemaOrgTag": null,
+"total": 1.16,
+"hasRDI": true,
+"daily": 19.333333333333332,
+"unit": "µg"
+},
+{
+"label": "Vitamin D",
+"tag": "VITD",
+"schemaOrgTag": null,
+"total": 1.2,
+"hasRDI": true,
+"daily": 0.3,
+"unit": "µg"
+},
+{
+"label": "Vitamin E",
+"tag": "TOCPHA",
+"schemaOrgTag": null,
+"total": 9.798800485038756,
+"hasRDI": true,
+"daily": 48.994002425193784,
+"unit": "mg"
+},
+{
+"label": "Vitamin K",
+"tag": "VITK1",
+"schemaOrgTag": null,
+"total": 329.31698973751065,
+"hasRDI": true,
+"daily": 411.64623717188834,
+"unit": "µg"
+}
+]
+},
+"bookmarked": false,
+"bought": false
+},
+{}
+]
+}
