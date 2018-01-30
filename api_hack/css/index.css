@@ -4,6 +4,9 @@
     padding: 0;
 }
 
+.box-shadow{
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
 body{
     max-width: 960px;
     margin: 0 auto;
@@ -11,13 +14,18 @@ body{
     padding: 20px;
 }
 
+/*BEGIN:  Styles for the landing screen slider */
 #slider{
-    margin: 50px auto; 
+    margin: 25px auto; 
     position: relative; 
     width: 80%; 
     height: 300px; 
     padding: 10px; 
-    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+    /* box-shadow: 0 0 20px rgba(0,0,0,0.4);  */
+}
+
+#slider h2{
+    text-align: center;
 }
 
 .slide{
@@ -27,17 +35,23 @@ body{
     right: 10px; 
     bottom: 10px;
     color:white;
+    line-height: 1.2;
 }
 
 .slide h2{
     margin-bottom: .5em;
 }
+/*END:  Styles for the landing screen slider */
 
 header{
     margin-bottom: .5em;
+    text-align: center;
 }
 .selection{
-    text-align: center;
+    margin: 1em;
+}
+
+.selection h2{
     margin-bottom: .5em;
 }
 
@@ -45,13 +59,57 @@ header{
     margin-right: .5em;
 }
 
-.searchBox{
-    width: 80%;
-    margin: 0 auto;
+label[for="cook"]{
+    margin-right: 10px;
 }
 
+form#form_search{
+    margin: 1em auto;
+}
+
+.search_query{
+    height: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 80%;
+}
+.searchBox{
+    width: 80%;
+    margin: 1em .5em 1em 1em;
+}
+
+main{
+    margin: 1em .5em;
+}
+
+ul > li {
+    margin-left: 10px;
+}
+/* BEGIN: Styles for the Info Page */
+.facts, .humour, .faq{
+    padding:20px;
+    margin-bottom: 1em;
+}
+
+#back{
+    text-align: center;
+    margin: .5em 0;
+}
+
+/* END: Styles for the Info Page */
+
+/* BEGIN: Styles for the results obtained by search */
 .results{
     margin: 1em 0;
+}
+
+.pagination{
+    text-align: center;
+    margin-top: .5em;
+}
+
+.pagination button{
+    padding: 5px;
 }
 
 .recipeItem, .restaurantItem{
@@ -66,7 +124,14 @@ header{
     width:200px;
 }
 
+.noResults{
+    text-align: center;
+    font-weight: bold;
+}
 /* Disable prev link on first page */
 .hideLink{
     display: none;
 }
+/* END: Styles for the results obtained by search */
+
+/* MEDIA QUERIES */

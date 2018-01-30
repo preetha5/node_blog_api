@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <section id="slider">
+    <section id="slider" class="box-shadow">
         <h2>Why Go Veggie?</h2>
         <div class="slide">
             <h3>Reduce risk of the No. 1 killer – Heart Disease</h3>
@@ -51,27 +51,94 @@
                  an individual can take to reduce global warming is to adopt a vegetarian diet.</p>
         </div>
     </section>
-    <header>
+    <header role="banner">
         <h1>Welcome to Green Eats</h1>
         <p>Here you can find inspirations for cooking vegetarian recipes or
             find veg-friendly restaurants in your city.
         </p>
+        <section class="selection">
+                <h2>I'm in the mood to :</h2>
+                <input type="radio" name="selection" id="cook" value="cook" checked />
+                <label for="cook">COOK</label>
+                <input type="radio" name="selection" id="eat-out" value ="eat-out" />
+                <label for="eat-out">EAT-OUT</label>
+            </section>
+            <form action="#" id="form_search" class="searchBox">
+                    <input type="textarea" placeholder="ingredients, recipe name or cuisine" class="search_query" required/>
+                    <button type="submit"> Search </button>
+            </form>
     </header>
-    <section class="selection">
-        <h2>I'm in the mood to :</h2>
-        <input type="radio" name="selection" id="cook" value="cook" checked />
-        <label for="cook">COOK</label>
-        <input type="radio" name="selection" id="eat-out" value ="eat-out" />
-        <label for="eat-out">EAT-OUT</label>
-    </section>
-    <form action="#" id="form_search" class="searchBox">
-            <input type="textarea" placeholder="enter comma seperated keywords" class="search_query" required/>
-            <button type="submit"> Search </button>
-    </form>
     <main role="main">
         <ul class="results"></ul>
-    </section>
-    <a href="#slider">Back to Search</a>
+        <div class="infoPage">
+            <article class="faq content box-shadow">
+                <h3>Common Questions about Vegetarian Diets: </h3>
+                <ul>
+                    <li>
+                        <p class="question" >Is a plant-based diet healthier than an omnivorous one?</p>
+                        <p>Plant-based diets are low in saturated fat, free of cholesterol, and rich in fiber,
+                         vitamins, minerals and antioxidants. Research reveals that following this type of 
+                         diet will lower your risks of dieseases like Heart disease, Hypertension (high blood pressure), 
+                         Diabetes and Colon and breast cancers</p>
+                    </li>
+                    <li>
+                        <p class="question">Are there any disadvantages for opting to become a vegetarian fulll time?</p>
+                        <p>Opting for vegetarian diet might means saying goodbye to meat, fish and eggs. 
+                        So you should plan to add supplements for any protein or vitamin deficiency that you might 
+                        encounter due to a sudden change of diets. You can also find multiple sources of protein
+                        in plants.</p>
+                    </li>
+                    <li><p class="question">How to make sure you get enough protein being a vegetarian?</p>
+                        <p>You’ll want to make sure that your diet includes enough protein to maintain muscle mass, 
+                        strong bones and healthy skin. The following foods are packed with protein:
+                        <ul>
+                            <li>Beans, lentils and split peas</li>
+                            <li>Quinoa</li>
+                            <li>Soy prodcuts like tofu, tempeh, soy milk</li>
+                            <li>Nuts and Seeds</li>
+                        </ul></p>
+                    </li>
+                    <li>
+                        <p class="question">Does being a vegetarian really help the environment?</p>
+                        <p>Per a study in the scientific-american,Switching to a lacto-ovo vegetarian diet 
+                        would result in a 33 percent decrease in emissions. Vegan diets are 53 percent more
+                         efficient. But there are certain vegetables which might consume more water but produce
+                        less energy when eaten than say meat. But nonetheless vegetarian dieets are overall 
+                        a healthy alternative for meats.</p>
+                    </li>
+                </ul>
+            </article>
+            <article class="content">
+                <div class="facts box-shadow">
+                    <h3>Did you Know?</h3>
+                    <ul>
+                        <li>The first Vegetarian Society was formed in England in 1847. 
+                        The society’s goal was to teach people that it is possible to be healthy without eating meat.</li>
+                        <li>Vegetarianism has roots in ancient India. In fact, currently 70% of the world’s vegetarians 
+                            are Indians and there are more vegetarians in India than in any other country in the world.</li>
+                        <li> Only around 20% of the corn grown in the United States is eaten by people, 
+                            with about 80% of the corn eaten by livestock.</li>
+                        <li>Opting for vegetarian food does not mean , no more meat.
+                            Creating a good plant-based diet few times a week would be a healthy start.
+                        </li>
+                    </ul>
+                </div>
+                <div class="humour box-shadow">
+                    <h3>Humour Corner</h3>
+                    <div><p>What did the lettuce say to the celery?</p>
+                        <p>Are you stalking me?</p>
+                    </div>
+                    <div>
+                        <p>What did one vegetarian spy say to the other vegetarian spy?</p>
+                        <p>We have to stop meating like this.</p>
+                    </div>
+                    <h4>For more veggie jokes go <a href="https://www.happycow.net/vegtopics/humor">here.</a></h4>
+                </div>
+            </article>
+
+        </div>
+    </main>
+    <p id="back"><a href="#slider" >Back to Search</a></p>
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

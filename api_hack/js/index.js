@@ -1,9 +1,10 @@
 // Globals
+const URL_RECIPE = "https://api.edamam.com/search";
 const URL_CITIES = "https://developers.zomato.com/api/v2.1/cities";
 const URL_RESTAURANTS = "https://developers.zomato.com/api/v2.1/search"; 
 const restaurant_thumb = "images/restaurant_thumb.png";  
 let queryString = '';
-let cityQuery = '';
+//let cityQuery = '';
 let start = 0;
 let end = 10;
 let total = 0;
@@ -30,11 +31,18 @@ function renderRestaurant(item){
 
 function processcityCB(cityInfo){
     console.log(cityInfo);
+    let total = cityInfo.location_suggestions.length;
+    if(total === 0){
+        $(".results").empty();
+        $(".results").append(`
+        <p class="noResults">No results found for "${queryString}"</p>`); 
+        return;
+    }
     let cityID = cityInfo.location_suggestions[0].id;
     let restaurantQuery = {
         'entity_type': "city",
         'entity_id': cityID,
-        'cuisines': '308',
+        'cuisine': '308',
         'start': start,
         'count': 10,
         "apikey": "5e07d543a08ec1f65b9ef497e9c9e1b4",
@@ -51,17 +59,20 @@ function processcityCB(cityInfo){
         $(".results").empty();
         restaurants = restaurants.join('');
         restaurants += `
+        <div class="pagination">
             <button class="btn_prev ${linkPrev}">prev</button>
-            <button class="btn_load ${linkNext}">next</button>`;
+            <button class="btn_load ${linkNext}">next</button>
+        </div>`;
         $(".results").append(restaurants);    
     });
 }
 
 function searchRestaurants(){
     let query = { 
-        'q': cityQuery,
+        'q': queryString,
         "apikey": "5e07d543a08ec1f65b9ef497e9c9e1b4",
     };
+    console.log(query);
     $.getJSON(URL_CITIES, query, processcityCB);
     }
 
@@ -85,8 +96,9 @@ function processRecipeCB(data){
     total =  data.count;
     //Return if no results found
     if(total === 0){
+        $(".results").empty();
         $(".results").append(`
-        <p>No results found for ${queryString}</p>`);
+        <p class="noResults">No results found for "${queryString}"</p>`);
         return;
     }
     let linkPrev =  (start === 0) ? 'hideLink' : '';
@@ -97,14 +109,14 @@ function processRecipeCB(data){
     $(".results").empty();
     recipes = recipes.join('');
     recipes += `
+    <div class="pagination">
     <button class="btn_prev ${linkPrev}">prev</button>
-    <button class="btn_load ${linkNext}">Next</button>`;
-    console.log(recipes);
+    <button class="btn_load ${linkNext}">next</button>
+    </div>`;
     $(".results").append(recipes);
 }
 
 function searchRecipes(){
-    const URL_RECIPE = "https://api.edamam.com/search";
     let query = { 
         'q': queryString,
         'app_id': '69992146',
@@ -160,7 +172,7 @@ function handleSearchQuery(){
             searchRecipes();
         } else 
         if ($("#eat-out").is(':checked')){ 
-            cityQuery = text;
+            queryString = text;
             searchRestaurants();
         }
     });
@@ -197,7 +209,7 @@ function renderSlider(){
         .fadeIn(1000)
         .end()
         .appendTo('#slider');
-    },  3000);
+    },  10000);
 }
 
 function launchApp(){
