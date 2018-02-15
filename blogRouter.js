@@ -8,15 +8,15 @@ const {BlogPosts} = require('./models');
 
 //Add some default blog posts on load
 BlogPosts.create('welcome to node', 'intro to nodeJS', 'preetha');
-BlogPosts.create('REST API methods', 'Create, Read, Update and Delete', 'Amy');
+BlogPosts.create('REST API methods', 'Create, Read, Update and Delete', 'Amy', '01-01-2018');
 
-//GET
+//GET - get all blogs
 router.get('/', (req, res) => {
     console.log('getting blogs');
     res.json(BlogPosts.get());
 });
 
-//POST
+//POST - Add a blog post
 router.post('/', jsonParser ,(req, res) => {
     //check for required fields of blog title, content and author
     const requiredFields = ['title', 'content' , 'author'];
@@ -32,14 +32,14 @@ router.post('/', jsonParser ,(req, res) => {
     res.status(201).json(item);
 });
 
-//DELETE
+//DELETE - Delete a blog
 router.delete('/:id', (req, res) => {
     console.log(`deleting item ${req.params.id}`);
     BlogPosts.delete(req.params.id);
     res.status(204).end();
 });
 
-//PUT (Update)
+//PUT Update an existing blog
 router.put('/:id', jsonParser, (req, res) => {
     //check for required fields of blog title, content and author
     const requiredFields = ['title', 'content' , 'author'];
