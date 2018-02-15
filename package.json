@@ -1,0 +1,29 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "description": "creating blog aoi using node",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preetha5/node_blog_api.git"
+  },
+  "keywords": [
+    "node",
+    "blog"
+  ],
+  "author": "preetha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/preetha5/node_blog_api/issues"
+  },
+  "homepage": "https://github.com/preetha5/node_blog_api#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "uuid": "^3.2.1"
+  }
+}
