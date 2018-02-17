@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: LjZuGNFghTTbyu9Y+qeYkIBGJKGRpFo1zEhukue8SL12q2B1cOka2dN5bfPVwk7y3jVYv3vHu61oqSNBj5hcvr8tsOzDIGYI27yLvkuIDC9Bjd2vpAgp/CVOyi0MAD5rAgGDd/wuR8s+4R8xlzG1D2OGSb0Ql2te0dUKYmamJNrnRnNyrLE76da65PdIdpIoDlpTtDEOqaRhfC49AZCC8NdW8G/pTiWoTp8JKAw8BZfcOxdmYqcbrpzGXGriB95FrRR+rDKr4Oiy5FaY/HeFcZsiMm7sDzr8CI9bL95z0Ug4az6N74WT4X+B6ouif0+S6JE31deJ85yG9Skb1bNxJ0/vDEyoQnvSjWj9s0AhcE6cumLcdNxCsQDcf37DCpY2lOf+WNFw6wDb0tDP7DIWD/4ewCmNwdifhe6OJhuJ0P41Qhw8LMudTBcOv5PGagviG/opgPElipSirGMicSwQk1JyY4JkAGQIYsqvmlzkpMpXTkPKYx4bdOCquyaqRFlz+4vFNNko2+jJgVQz7NeMIHLe11S+G+OBxz5oA1YECITYw4w0IoxKBvo8WDTR0H3oGaNgEVcIAF7ZN8HpwCKAHteAYpEwZn1m5R4LHfyWhCZ4Uz+SExPr3IrEWLDOsXF6nmV5vkR1SKz8UqkX9WEDm/H9LqiZvvvR8WbT/MGWyD8=
+  app: https://immense-castle-48301.herokuapp.com
+  on:
+    repo: preetha5/node_blog_api
