@@ -2,7 +2,8 @@ language: node_js
 node_js: node
 deploy:
   provider: heroku
-  api_key: 78da7793-e247-4923-9e98-c0794a380712
-  app: https://cryptic-reaches-83651.herokuapp.com
+  api_key:
+    secure: U32VJzb6tJ5dWq3VYSZLCHDOtcLOOLrosfG9y8LO1HSx6M7k6Y49wW7iG+1cCNZAN1fXS1WkifEYRWvGHwdwypipqMonNv/ho6MDcMlVM7aGzOvW1RKBBBt+5IEhi3fRv5U/4CPtnF1l9abEEi/wYmrCnXELBgcZuxcdkZ9ovKgRZvzIxlcrL1HcsWwA1w/ESdj49YMn4J1wQ8m5/aAI8FaIfYdVO6Tyu/mvksvGbUmC+tmg/KX1/w68XzOgN8CzWDKNsDCGzt5Mx5Db6hlW6xUSCmGbWCacNIzO4092avgegQJ65FDdfC3R8Mpn7x46CuD4HAOnV0Y9iznD0LtX5oUypgRykJaMSWrBbQWSJhQh+AkrIGmiGvoQelAkHaIH9kDIfgD3i3YirVkg/G+v4Rb7nu9FT0x2+c97apT+4zEfVeKU3QIVanXyf5fTuv0L7s5CuqgShltTpGR4juzgTZVGMHL9hc4JNPwT+XB+QtAuWBbCtlB5Sk1aQa0Sb1x+VIvBbMTBht1uKJExRMFWxmkkbqFiO/28r5XiWDvWzlYIIaNDT0UKkhf0QIZj9V/GGQf3EmmPDN5ie/usyiknbQY5htpD647QJ+DmoYOEimjOmNder+SSWb1d83SS1U0m+naBCuwhXIfCDxhTPt7MUh7Xdg4dkMG0fgqR1YbbKMk=
+  app: cryptic-reaches-83651
   on:
     repo: preetha5/node_blog_api
