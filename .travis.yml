@@ -3,6 +3,6 @@ node_js: node
 deploy:
   provider: heroku
   api_key: 78da7793-e247-4923-9e98-c0794a380712
-  app: https://cryptic-reaches-83651.herokuapp.com/
+  app: https://cryptic-reaches-83651.herokuapp.com
   on:
     repo: preetha5/node_blog_api
