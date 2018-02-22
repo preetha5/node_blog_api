@@ -4,7 +4,7 @@
   "description": "creating blog aoi using node",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "PORT=3000 node server.js",
     "test": "mocha --exit"
   },
   "repository": {
