@@ -27,7 +27,7 @@ app.get('/posts', (req, res) => {
 //GET request with an ID
 app.get('/posts/:id', (req, res) => {
   blogPosts.findById(req.params.id)
-  .then(post => post.json(post.serialize()))
+  .then(post => res.json(post.serialize()))
   .catch(err => {
     console.error(err);
     res.status(500).json({message: "Internal server error"});
@@ -38,6 +38,7 @@ app.get('/posts/:id', (req, res) => {
 app.post('/posts', (req,res) => {
   const requiredFields = ['title', 'content', 'author'];
   for (let i=0; i< requiredFields.length; i++){
+    const field = requiredFields[i];
     if (!(field in req.body)){
       const message = `Error: missing ${field} in req.body`;
       return res.status(400).json(message);
@@ -62,8 +63,7 @@ app.put('/posts/:id', (req,res) =>{
   //make sure id in the param and req.body match
   if(!(req.params.id && req.body.id && req.body.id === req.params.id)){
     const message = 
-      `Request path id ${req.params.id} and Request body ID 
-      (${req.body.id}) should match`;
+      `Request path id (${req.params.id}) and Request body ID (${req.body.id}) should match`;
     console.error(message);
     return res.status(400).json({message: message});
   }
