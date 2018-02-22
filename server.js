@@ -41,7 +41,7 @@ app.post('/posts', (req,res) => {
     const field = requiredFields[i];
     if (!(field in req.body)){
       const message = `Error: missing ${field} in req.body`;
-      return res.status(400).json(message);
+      return res.status(400).send(message);
     }
   }
   blogPosts
@@ -49,9 +49,8 @@ app.post('/posts', (req,res) => {
       title: req.body.title,
       content: req.body.content,
       author: req.body.author,
-      created: req.body.created
     })
-    .then(post => res.status(201).json(post.serialize()))
+    .then(blog => res.status(201).json(blog.serialize()))
     .catch(err => {
       console.error(err);
       res.status(500).json({message: "Internal server error"});
@@ -76,8 +75,8 @@ app.put('/posts/:id', (req,res) =>{
     }
   });
 
-  blogPosts.findByIdAndUpdate(req.params.id, { $set: toUpdate})
-  .then(post => res.status(200).json(post.serialize()))
+  blogPosts.findByIdAndUpdate(req.params.id, { $set: toUpdate}, {new: true})
+  .then(updatedPost => res.status(200).json(updatedPost.serialize()))
   .catch(err => {
     console.error(err);
     res.status(500).json({message: "Internal server error"});

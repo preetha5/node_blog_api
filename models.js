@@ -9,7 +9,7 @@ const blogpostsSchema = mongoose.Schema({
         lastName:{type:String, required: true}
     },
     content:{type: String, required: true},
-    created:{type:Date}
+    created:{type:Date, default: Date.now}
 });
 
 //Create virtual property for authorName
