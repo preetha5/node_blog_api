@@ -5,12 +5,12 @@ services:
 deploy:
   provider: heroku
   api_key:
-    secure: vRzKTEbEtgXAJPgu8q2KaulHsWPPeMhekmmgBwuWrVISO+zRk/03BaYbk3H3b3t2BvTOnBt9EY8LyN6qmaEdqgiA4i13RAqmy6btqpFHi0ZCOr0X1FnZz3bUV/IzXvyvcR4705h7qTfKZmoFwfw45xnPjY+f3Tc+KO+Dvivi9wlYsUI05PxL9GskK3XAH4LyzZan4Kl/cgDEdMI/ea0lpfIqXxX7U0OxfM24lI9fSFmNAyb0G52pUn7bB77VIs56m2k5jRqOatrgzz/1hpz0uVVJiO/wQEgrupm0LEwdDtaCcAU7U45jbL1BDbplFkZI+4Ji+vNC6Aiy6VLIIFHeFgYfOHB/Clcj4CwMIkBEfU/66sMf+5/+oBNQqy7gaLyurE0HpxgiDH2llHbH+1mqVeNTjygnJeI5peBU2bHxPh7ZP5sRs7qLyJaXXFmbfKiCfzgY6XGdEvLYZvoCxNToy+x+xBLi7ePxQ+pU0bQ5qxYsDkQnI78cE3ESQXV6X++QjegGPxgVNcmdaY0tL3zAebF52SNvjcCeAkSo657nDaihkWOA8jKUG8YcPB3GoEkHWn26j6mpyLxrf2wQhcka5ZmuN7Eg6nI8plunj7eLf9PLvPiC8b4wnmhEguo1Xh6xyiuALu9UlzCj4yIeJSgPtVvzGhRzLOcfG/XFzVGqVQM=
+    secure: yAkQqHz5UI1MTHVVohOYSEiGtXr2+7FsBQNmD5EksX/0jsbG7tDFCIurtoDVLuTcXfqWVB0BsLvgwoGmAvYL17u1WfUpausicB1jyQIMrTvu24XJdrdCgqSXFmZohv062GIHnKMkJQ0p82XsCJThI8nhgs/2x0bUwQ/itdlMPOnIMR1WOGjqWVfF6MHI5+aCdOEQWfU70tX4alBiGmNjqn1rv3FPweJG/jEOU3em/2Wxr+ycrtsQ2d/t6iHHvN73ZrQgklmtdet33yW0TJUG4UoUzeOmXqER4iNGYcITtKWDJNfDEN5/Wsn/3SnqTmRFDDjedSRZ3Z7nBTB/0JbHXdlrgIyXnfx+P8iSePPZVfrOyWcjGTRJVDDSaGzufbD1lyWGaNinELi0GLRPdVr06hGkk3nI1Q54zcirs+xm1gRMVkYaxy9xCOnLxClUZgJIPzX06cvCQKdMJzoVNmV8SpEGade42ZT4XPEn9aG02RrmFKbu0EZ1hq9g14smq98cUzWP8eqQPNYTAzrCviHJyZp0o613udGeB21jzrBNaDiDXTfB0XiuwoRLlE4sXOryrRhnACwVodoAjNKWvPA6isU1qGNsTnvKWvQUelt0OBUSZR7pmgW/qjYBi/loQd48v75tBG5+Wj6HR1byL2CuTuXUnxQQ3TOpPD40BFJa9qU=
   app: pacific-earth-38644
   on:
     repo: preetha5/node_blog_api
     branch: master
-  notifications:
+  notifications: 
   email:
-    on_success: never # default: change
-    on_failure: never # default: always
+    on_success: never
+    on_failure: never
