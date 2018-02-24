@@ -9,6 +9,7 @@ deploy:
   app: pacific-earth-38644
   on:
     repo: preetha5/node_blog_api
+    branch: master
   notifications:
   email:
     on_success: never # default: change
