@@ -2,3 +2,11 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: dFr1xdhlo0P07f10l7D+6CjjnxtvYdujBrKtPZC8L4ezZfdGz9FT+I22U+1+UpCs0aJk15SVPiOT48u9438gKhV1SBmCVZgnjYboeIi59ysU5q1yUrGZtab9mInN7SYxQ85o9eRZu0Qn6QugZiUDxJd+tyqrIC/1pJHMNnh2vMM691UAN3eDS0WLdgGoQCLuOs/s9SJTG1ZOwmkkrex0HMqjfPevxUGoi8pSFUqZuqcCNWDREFs5KJCvuxzo7dQrqEn8wIa1r1cbWD+ZE15o798sumEyi2SDbZmzajTdhlOj5hrc6D+2QdcFw1mnfvtrlvewI4a4pU+dbzBMSdW/guV0u1es6L5HS8nkPhQNSQEAQtkfvAKnIaTQ0B7SasmJgeOfPr2+DZBJIm6KkJ4TR5kRsThdNUX2xmCRKhcGdQ3W8pdZOQpy2OWcZuJtI5pq7DaksCMdklJnLVOixtJJErlD98fM9Wb0R93j1VsDwPYVgP94MCeT64rZc+AMxBj22Q8HJAx2d7XfS2cwo9I2hmtoY6x+1dlJiAeya3fFbIBCnh+RTLNg7E/lZKD24sjuqiVMHoLIjigHJCzaSuYVvTyLiZ+7u0kA+agpIHHQ05jaPXZZXvnES3L7ZUfsFFcrXFby1ztO2+R3RAN9ilbwYvple7i1hVKXT+JqaBCn0gk=
+  app: dry-caverns-49592
+  on:
+    repo: preetha5/node_blog_api
+    branch: feature/mongodb_mongoose
