@@ -9,4 +9,3 @@ deploy:
   app: dry-caverns-49592
   on:
     repo: preetha5/node_blog_api
-    branch: feature/mongodb_mongoose
