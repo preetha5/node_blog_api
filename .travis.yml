@@ -2,3 +2,14 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: vRzKTEbEtgXAJPgu8q2KaulHsWPPeMhekmmgBwuWrVISO+zRk/03BaYbk3H3b3t2BvTOnBt9EY8LyN6qmaEdqgiA4i13RAqmy6btqpFHi0ZCOr0X1FnZz3bUV/IzXvyvcR4705h7qTfKZmoFwfw45xnPjY+f3Tc+KO+Dvivi9wlYsUI05PxL9GskK3XAH4LyzZan4Kl/cgDEdMI/ea0lpfIqXxX7U0OxfM24lI9fSFmNAyb0G52pUn7bB77VIs56m2k5jRqOatrgzz/1hpz0uVVJiO/wQEgrupm0LEwdDtaCcAU7U45jbL1BDbplFkZI+4Ji+vNC6Aiy6VLIIFHeFgYfOHB/Clcj4CwMIkBEfU/66sMf+5/+oBNQqy7gaLyurE0HpxgiDH2llHbH+1mqVeNTjygnJeI5peBU2bHxPh7ZP5sRs7qLyJaXXFmbfKiCfzgY6XGdEvLYZvoCxNToy+x+xBLi7ePxQ+pU0bQ5qxYsDkQnI78cE3ESQXV6X++QjegGPxgVNcmdaY0tL3zAebF52SNvjcCeAkSo657nDaihkWOA8jKUG8YcPB3GoEkHWn26j6mpyLxrf2wQhcka5ZmuN7Eg6nI8plunj7eLf9PLvPiC8b4wnmhEguo1Xh6xyiuALu9UlzCj4yIeJSgPtVvzGhRzLOcfG/XFzVGqVQM=
+  app: pacific-earth-38644
+  on:
+    repo: preetha5/node_blog_api
+  notifications:
+  email:
+    on_success: never # default: change
+    on_failure: never # default: always
