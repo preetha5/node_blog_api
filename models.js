@@ -15,13 +15,13 @@ const blogpostsSchema = mongoose.Schema({
 //Create virtual property for authorName
 blogpostsSchema.virtual('authorName')
     .get( function(){
-        return `${this.author.firstName} ${this.author.lastName}`;
+        return `${this.author.firstName} ${this.author.lastName}`.trim();
     });
 
 //Create an instance method for all calls to the model
 blogpostsSchema.methods.serialize = function(){
     return {
-        id: this.id,
+        id: this._id,
         title: this.title,
         author: this.authorName,
         content: this.content,
