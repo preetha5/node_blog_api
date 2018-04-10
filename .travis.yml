@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: yFah0fXiqLEhgK4FyXPMVG38YXqcaih06Ahk9rCm74zDePpXTcrk7bGsdos4cOMxCqwxcmsj/9PzF9rMNUbdj2LNyTZo9f4PAvZ4UJF460QumbKlmxn1Qew/6OQTyHyUNI2Ee24LfJpmmKUahCNP059bKroFKP2mNUxR76D199fK6aXcOKgB4cUL3ZD+GvP8fKoeWc9LQxZESnV/lihc2MG9YN9ZXZIC8ykzQ0BoEDT8N4KzwRtMZCCQj3UaPlgowNI2nlmII4JR0pd5tyCs/aDC/QrZfTYNnZ61VANRUZ8RABFb19YPO+iK+gXeQN/k5VfjF93Gd+uTPwxpUrPhsfQQ3rDUJ1DiQ6PNlaAL9CMi5oqN81srm4B90+6g8AhPf+sbLeVJimgplf8MWVwo/X8vlDUsJ8DsOPPL31QdU43Boiy1z9YzNNuP9DTxHoP+ZzPRnPf5Vc8uybgSEljUod0VyHrQDUZ6E/flTnAxpHLLUS3pt0WbDPzpAItNl2RHx0Mp0KmGb9oa3fV3fyww3CaZYWZxXkphG+ToopADns3/6ewziGVPb9vwBXlHTSFla1NioTu+8Qykp7xZrRsOw0qVShA9ug5IjRdnEPVG+rVVmY6PXhYG2J2Zyyfv1rpumUO5Qq5Uh4sOEjlzWBcK8d+Bn71f9Mue5BxUyfOq6DM=
+  app: pacific-earth-38644
+  on:
+    repo: preetha5/node_blog_api
