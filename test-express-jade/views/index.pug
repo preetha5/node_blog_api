@@ -1,0 +1,18 @@
+extends layout.pug
+block appContent
+    h2 Hello , my name is #{name}
+    h3 Link attributes
+    a(class='link' href='https://google.com') Go To Google
+    h3 Checkbox attributes
+    input#color(type='checkbox' checked name='Do you agree?')
+    h3 Link Attr using variables
+    - var url = "https://cnn.com"
+    a(class='link' href=url) Go To CNN
+    h3 Styled DIV
+    //- if (input#color.checked)
+        div(style={color:'red',background:'yellow'})
+        h4 I am styled with red font
+    h3 My List of Hobbies (pulled from a global array)
+    for hobby in hobbies
+        ul
+            li.listItem= hobby

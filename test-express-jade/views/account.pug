@@ -1,0 +1,17 @@
+extends layout.pug
+block appContent
+    h2 Accounting Details
+    p  This is where I'm doing my accounts from.
+
+    mixin list(...items)
+        ul
+            each item in items
+                li=item
+    
+    p= 'This code is' + ' <escaped>!'
+
+    h3 List1 created from mixin
+    +list(300,400,500)
+
+    h3 List2 created from mixin
+    +list('Hello','how','are', 'you')

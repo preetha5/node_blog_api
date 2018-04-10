@@ -1,0 +1,24 @@
+body{
+    max-width: 960px;
+    background-color: rgb(146, 196, 212);
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+}
+.link{
+    font-weight: bold;
+    color: #606bd1;
+}
+
+.listItem{
+    background-color: grey;
+    padding: 10px 20px;
+    list-style-type: square;
+    text-transform: capitalize;
+}
+
+footer{
+    margin-top: 50px;
+    text-align: center;
+}
